@@ -31,7 +31,12 @@ export default function SignIn() {
         return;
       }
       dispatch(signInSuccess(data))
-      navigate('/');
+        // Navigate based on user type (e.g., admin or regular user)
+    if (data.isAdmin === 1) {
+      navigate('/admin/dashboard');  // Admin-specific route
+    } else {
+      navigate('/');  // Regular user route
+    }
     } catch (error) {
     dispatch(signInFailure(error))
     }

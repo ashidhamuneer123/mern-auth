@@ -106,7 +106,7 @@ export default function Profile() {
 
   return (
     <div className="p-3 max-w-lg mx-auto">
-      <h1 className='text-3xl font-semibold text-center my-7'>profile</h1>
+      <h1 className='text-3xl font-semibold text-center my-7'>Admin profile</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input ref={fileRef} type="file" hidden accept="image/*" onChange={(e)=>setImage(e.target.files[0])}/>
         <img src={formData.profilePicture || currentUser.profilePicture} alt="profile" onClick={()=>fileRef.current.click()} className="h-24 w-24 rounded-full self-center cursor-pointer object-cover mt-2"/>
@@ -132,7 +132,7 @@ export default function Profile() {
         <span onClick={handleDeleteAccount} className="text-red-700 cursor-pointer">Delete Account</span>
         <span onClick={handleSignOut} className="text-red-700 cursor-pointer">Sign Out</span>
       </div>
-        <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
+      <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
       <p className='text-green-700 mt-5'>
         {updateSuccess && 'User is updated successfully!'}
       </p>
