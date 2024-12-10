@@ -2,6 +2,7 @@ import React , {useState,useEffect} from 'react'
 
 import { useParams, useNavigate } from 'react-router-dom';
 
+
 export default function AdminData() {
 
     const [users, setUsers] = useState([]);
@@ -10,6 +11,7 @@ export default function AdminData() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
     
     useEffect(() => {
         const fetchUsers = async () => {
@@ -80,6 +82,7 @@ export default function AdminData() {
       
       <div className="container">
       <h1 className="text-2xl font-bold mb-4">User Details</h1>
+     
       <div className="flex gap-2 mb-4 justify-end">
     <input
         type="text"
